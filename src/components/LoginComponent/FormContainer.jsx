@@ -1,7 +1,8 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from "react";
-import FormButton from "./FormButton";
-import FormInput from "./FormInput";
+
+import { FormButton, FormInput } from "../ReusableComponents/";
+
 import { submitLogin } from "../../api";
 
 const FormContainer = () => {
@@ -34,6 +35,7 @@ const FormContainer = () => {
 
     return (
         <form>
+
             <FormInput
                 placeholder="User Name"
                 labelId="Email"

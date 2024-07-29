@@ -1,8 +1,8 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
 import { Route } from "react-router-dom";
-import Login from "../components/LoginComponent";
-import Home from "../components/HomeComponent";
+import Login from "./LoginComponent/index.jsx";
+import Home from "./HomeComponent/Home.jsx";
 const routes = () => {
     return (
         <>
