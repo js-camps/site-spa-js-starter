@@ -4,7 +4,7 @@ import React from "react";
 function Home() {
   return (
     <div>
-      <h1>Welcome to Labs Basic SPA!!!</h1>
+      <h1>Welcome to Basic SPA</h1>
       <p>
         The following are a few components put together in a way that informs
         industry practices. Use this repository as a boilerplate for your work.
@@ -21,6 +21,7 @@ function Home() {
           file to pass that container around in your app.
         </p>
       </div>
+        {/* ListComponent */}
     </div>
   );
 }

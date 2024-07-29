@@ -1,7 +1,8 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from "react";
-import FormButton from "./FormButton";
-import FormInput from "./FormInput";
+
+import { FormButton, FormInput } from "../ReusableComponents";
+
 import { submitLogin } from "../../api";
 
 const FormContainer = () => {
@@ -30,10 +31,13 @@ const FormContainer = () => {
         } else if (userInput.name === "Password") {
             setUserPassword(userInput.value);
         }
+        // now you can grab the token and do whatever you need with it.
+        // console.log(accessToken)
     };
 
     return (
         <form>
+
             <FormInput
                 placeholder="User Name"
                 labelId="Email"

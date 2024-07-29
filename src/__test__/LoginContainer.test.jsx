@@ -1,10 +1,11 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
-import { render, waitFor } from "@testing-library/react";
+import {render, waitFor} from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { submitLogin as mockSubmitLogin } from "../api";
-import FormContainer from "../components/FormComponent/FormContainer";
-import { describe, it, test, vi, expect, afterEach } from 'vitest';
+import { describe, it, vi, expect, afterEach } from 'vitest';
+
+import LoginContainer from "../components/LoginComponent";
 
 vi.mock("../api");
 
@@ -12,7 +13,7 @@ afterEach(() => {
     vi.clearAllMocks();
 });
 
-describe("<FormContainer /> test suite", () => {
+describe("<LoginContainer /> test suite", () => {
     it("[1] button responds to click handler", async () => {
         const fakeUser = {
             username: "test@email.com",
@@ -20,7 +21,7 @@ describe("<FormContainer /> test suite", () => {
         };
 
         mockSubmitLogin.mockResolvedValueOnce();
-        const { getByText, getByLabelText } = render(<FormContainer />);
+        const { getByText, getByLabelText } = render(<LoginContainer />);
         const button = getByText(/click/i);
         const emailInput = getByLabelText(/email/i);
         const passwordInput = getByLabelText(/password/i);
@@ -41,6 +42,4 @@ describe("<FormContainer /> test suite", () => {
             password: fakeUser.password,
         });
     });
-
-
 });
