@@ -11,7 +11,7 @@ describe("<FormInput />", () => {
     cleanup();
   });
 
-  it("input is rendered with proper labels", () => {
+  it("[1] input is rendered with proper labels", () => {
     // For this assertion, we're just using RTL to test the attributes that get rendered from FormInput
     const { getByLabelText } = render(
         <FormInput

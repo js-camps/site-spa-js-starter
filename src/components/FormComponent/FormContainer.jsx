@@ -1,36 +1,37 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from "react";
-
 import FormButton from "./FormButton";
 import FormInput from "./FormInput";
+import { submitLogin } from "../../api";
 
 const FormContainer = () => {
     const [userPassword, setUserPassword] = useState("");
     const [userEmail, setUserEmail] = useState("");
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
-    const clickHandler = (event) => {
+    const clickHandler = async (event) => {
         event.preventDefault();
-        // take userPassword and userEmail and send it off to state
-        alert(`
-      User's Email is ${userEmail}  
-      User's Password is ${userPassword}
-    `);
-        // clean up state
-        setUserEmail("");
-        setUserPassword("");
+        setIsSubmitting(true);
+        try {
+            await submitLogin({
+                username: userEmail,
+                password: userPassword,
+            });
+        } catch (error) {
+            console.error(error);
+        }
+        setIsSubmitting(false);
     };
 
     const inputHandler = (input) => {
         const userInput = input.target;
-        // You can use a custom handler here and adapt it to whatever types of inputs you need.
-        // Be sure to look at the propTypes supported and required inside of FormInput.js
-        if (input.target.name === "Email") {
-            return setUserEmail(userInput.value);
-        }
-        if (input.target.name === "Password") {
-            return setUserPassword(userInput.value);
+        if (userInput.name === "Email") {
+            setUserEmail(userInput.value);
+        } else if (userInput.name === "Password") {
+            setUserPassword(userInput.value);
         }
     };
+
     return (
         <form>
             <FormInput
@@ -49,6 +50,7 @@ const FormContainer = () => {
                 handleButtonClick={clickHandler}
                 classType="primary"
                 buttonText="Click"
+                isDisabled={isSubmitting}
             />
         </form>
     );

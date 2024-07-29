@@ -6,7 +6,7 @@ import { describe, it, expect } from 'vitest';
 import { render } from "@testing-library/react";
 
 describe("<FormButton /> test suite", () => {
-  it("button text is determined by props", () => {
+  it("[1] button text is determined by props", () => {
     // for this first assertion, we'll simply ensure that the button's text is determined by the props passed to it
     // we'll also ensure that the className defaults to primary where none is passed as props
     const { getByText, rerender } = render(

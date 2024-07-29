@@ -6,7 +6,7 @@ import { render } from '@testing-library/react';
 import App from '../components/App.jsx';
 
 describe('App Component', () => {
-    it("renders welcome message", () => {
+    it("[1] renders welcome message", () => {
         // let's just make sure the component mounts with an H1, you'll want to update this test to include any UI on your landing page you'd like
         const { getByText } = render(<App />);
         const h1 = getByText(/welcome to labs basic spa/i);

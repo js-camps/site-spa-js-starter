@@ -2,21 +2,23 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Button = (props) => {
-  return (
-      <button
-          onClick={props.handleButtonClick}
-          className={props.classType || "primary"}
-      >
-        {props.buttonText}
-      </button>
-  );
+const FormButton = (props) => {
+    return (
+        <button
+            onClick={props.handleButtonClick}
+            className={props.classType || "primary"}
+            disabled={props.isDisabled}
+        >
+            {props.buttonText}
+        </button>
+    );
 };
 
-Button.propTypes = {
-  buttonText: PropTypes.string.isRequired,
-  classType: PropTypes.string, // Added classType to propTypes
-  handleButtonClick: PropTypes.func,
+FormButton.propTypes = {
+    buttonText: PropTypes.string.isRequired,
+    classType: PropTypes.string,
+    handleButtonClick: PropTypes.func,
+    isDisabled: PropTypes.bool, // Added isDisabled to propTypes
 };
 
-export default Button;
+export default FormButton;
