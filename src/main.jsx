@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Route } from "react-router-dom";
 
+import ListItems from "./components/ListComponent"
 import Login from "./components/LoginComponent";
 import Home from "./components/HomeComponent";
 
@@ -19,6 +20,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                   <Login />
               </Route>
               {/*<Route path="/implicit/callback" component={LoginCallback} />*/}
+              <Route path="/items">
+                  <ListItems />
+              </Route>
           {/*</Security>*/}
       </React.StrictMode>
     </BrowserRouter>,
