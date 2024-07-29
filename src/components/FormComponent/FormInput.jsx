@@ -7,6 +7,7 @@ const FormInput = (props) => {
         <>
             <label htmlFor={props.labelId}>{props.labelId}:</label>
             <input
+                id={props.labelId}
                 name={props.labelId}
                 value={props.value}
                 onChange={(input) => props.handleInput(input)}
@@ -16,11 +17,11 @@ const FormInput = (props) => {
     );
 };
 
-export default FormInput;
-
 FormInput.propTypes = {
     placeholder: PropTypes.string.isRequired,
     labelId: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,
     handleInput: PropTypes.func,
 };
+
+export default FormInput;
