@@ -34,15 +34,15 @@ When using Vite with React, the recommended testing framework is `Vitest`.
 └── ...
 ```
 
-1. Install Vitest:
+1. **Install Vitest**:
 
 ```shell
 npm install -D jsdom vitest @testing-library/react @testing-library/jest-dom
 ```
 
-2. Configure Vitest:
+2. **Configure Vitest**:
 
-    Create or  a `vite.config.js` file (if you don't have one already) and add the following:
+**Create or  a `vite.config.js` file (if you don't have one already) and add the following**:
 
    -   `vite.config.js`
 ```shell
@@ -58,14 +58,39 @@ export default defineConfig({
 });
 ```
 
-3.  Write your tests:
+**Create or  a `setupTests.js` file (if you don't have one already) and add the following**:
 
-    Create a test file (e.g., `App.test.jsx`) and write your tests using React Testing Library:
+   -   `setupTests.js`
+```shell
+import { expect } from 'vitest';
+import * as matchers from '@testing-library/jest-dom/matchers';
+
+// Log the matchers to debug
+console.log('Matchers:', matchers);
+
+// Ensure the matchers are correctly imported and used
+if (Object.keys(matchers).length > 0) {
+    expect.extend(matchers);
+} else {
+    console.error('Matchers object is undefined or null');
+}
+```
+
+**Add `import React from 'react';` in `App.jsx` needed by `Vitest`**:
+
+  -   `App.jsx`
+```js
+import React from 'react';
+```
+
+3.  **Write your tests**:
+
+    **Create a test file (e.g., `App.test.jsx`) and write your tests using React Testing Library**:
 
 -   App.test.jsx
 ```shell
 import React from 'react';
-// import { act } from 'react'; // Import act from react
+
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import App from '../App';
@@ -81,7 +106,7 @@ describe('App Component', () => {
 });
 ```
 
-4. Run your tests:
+4.  **Run your tests**:
 
     Add a test script to `package.json`:
 
