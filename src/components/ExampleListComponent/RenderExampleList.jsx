@@ -1,11 +1,10 @@
-// eslint-disable-next-line no-unused-vars
 import React from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
-const ExampleItems = (props) => (
-    <div className="items-container">
+const RenderExampleList = (props) => (
+    <div>
         {
-            props.items.map(item => (
+            props.data.map(item => (
                 <figure key={item.id}>
                     <img src={item.thumbnailUrl} alt={item.title} />
                     <figcaption>
@@ -17,10 +16,10 @@ const ExampleItems = (props) => (
     </div>
 )
 
-export default ExampleItems;
+export default RenderExampleList;
 
-ExampleItems.propTypes = {
-    items: PropTypes.arrayOf(
+RenderExampleList.propTypes = {
+    data: PropTypes.arrayOf(
         PropTypes.shape({
             // Here we require an id of type number or string to prevent a "unique key prop" warning
             id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
