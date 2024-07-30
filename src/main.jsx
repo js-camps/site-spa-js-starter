@@ -2,9 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Route } from "react-router-dom";
 
-import { getItemsData } from "./api";
-
-import ListItems, { Items } from "./components/ListComponent";
+import ExampleList from "./components/ExampleListComponent"
 import Login from "./components/LoginComponent";
 import Home from "./components/HomeComponent";
 
@@ -23,11 +21,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
               </Route>
               {/*<Route path="/implicit/callback" component={LoginCallback} />*/}
               <Route path="/items">
-                  <ListItems
-                      getItemsData={getItemsData}
-                      LoadingComponent={() => <div>Loading Items...</div>}
-                      ItemsComponent={Items}
-                  />
+                  <ExampleList />
               </Route>
           {/*</Security>*/}
       </React.StrictMode>

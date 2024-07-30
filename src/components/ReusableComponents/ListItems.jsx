@@ -1,8 +1,7 @@
-// eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 
-
-const ListItems = ({ LoadingComponent, ItemsComponent, getItemsData}) => {
+const ListItems = ({ LoadingComponent, RenderItems, getItemsData }) => {
     const [items, setItems] = useState([]);
     const [isFetching, setFetching] = useState(true);
 
@@ -19,8 +18,14 @@ const ListItems = ({ LoadingComponent, ItemsComponent, getItemsData}) => {
             });
     }, []);
 
-    return isFetching ? <LoadingComponent /> : <ItemsComponent items={items} />;
+    return isFetching ? <LoadingComponent /> : <RenderItems items={items} />;
 };
 
 export default ListItems;
+
+ListItems.propTypes = {
+    LoadingComponent: PropTypes.func.isRequired,
+    RenderItems: PropTypes.func.isRequired,
+    getItemsData: PropTypes.func.isRequired
+}
 

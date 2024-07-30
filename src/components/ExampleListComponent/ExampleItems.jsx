@@ -2,8 +2,7 @@
 import React from "react";
 import PropTypes from 'prop-types';
 
-const Items = (props) => (
-
+const ExampleItems = (props) => (
     <div className="items-container">
         {
             props.items.map(item => (
@@ -18,7 +17,9 @@ const Items = (props) => (
     </div>
 )
 
-Items.propTypes = {
+export default ExampleItems;
+
+ExampleItems.propTypes = {
     items: PropTypes.arrayOf(
         PropTypes.shape({
             // Here we require an id of type number or string to prevent a "unique key prop" warning
@@ -29,5 +30,3 @@ Items.propTypes = {
         })
     ).isRequired,
 };
-
-export default Items;
