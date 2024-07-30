@@ -18,11 +18,15 @@ const Items = (props) => (
 )
 
 Items.propTypes = {
-    items: PropTypes.arrayOf(PropTypes.shape({
-        id: PropTypes.string.isRequired,
-        img_url: PropTypes.string.isRequired,
-        img_description: PropTypes.string.isRequired
-    })).isRequired
+    items: PropTypes.arrayOf(
+        PropTypes.shape({
+            // Here we require an id of type number or string to prevent a "unique key prop" warning
+            id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
+            title: PropTypes.string,
+            url: PropTypes.string,
+            thumbnailUrl: PropTypes.string,
+        })
+    ).isRequired,
 };
 
 export default Items;
