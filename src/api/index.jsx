@@ -1,12 +1,14 @@
+import axios from 'axios';
+// we will define a bunch of API calls here.
+
 const sleep = (time) =>
     new Promise((resolve) => {
         setTimeout(resolve, time);
     });
 
-async function submitLogin(user) {
-    // this is a fake API call. Needs to be replaced with a real Authentication flow
-    await sleep(1000);
-    return { success: true, username: user.username };
+const getItemsData = () => {
+    return axios.get(`https://jsonplaceholder.typicode.com/photos?albumId=1`)
+        .then(response => response.data)
 }
 
-export { submitLogin, sleep };
+export { sleep, getItemsData };
