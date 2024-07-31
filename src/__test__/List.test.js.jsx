@@ -1,8 +1,9 @@
+// eslint-disable-next-line no-unused-vars
 import React from "react";
 import { render, cleanup } from "@testing-library/react";
 import { describe, it, vi, expect, afterEach } from 'vitest';
 import { act } from "react-dom/test-utils";
-import List from "../components/ReusableComponents/List";
+import List from "../components/common/List.jsx";
 
 afterEach(() => {
     cleanup();

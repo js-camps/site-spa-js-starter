@@ -7,6 +7,7 @@ function HomePage(props) {
         <div>
             {/*<h1>Hi {userInfo.name} Welcome to Labs Basic SPA</h1>*/}
             <h1>Welcome to Labs Basic SPA</h1>
+            <h3>Hi Richard Welcome to Sites Basic SPA</h3>
             <p>
                 The following are a few components put together in a way that informs
                 industry practices. Use this repository as a boilerplate for your work.

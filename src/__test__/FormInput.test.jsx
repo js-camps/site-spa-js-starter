@@ -1,4 +1,4 @@
-import FormInput from "../components/ReusableComponents/FormInput";
+import FormInput from "../components/common/FormInput.jsx";
 
 // eslint-disable-next-line no-unused-vars
 import React from "react";
