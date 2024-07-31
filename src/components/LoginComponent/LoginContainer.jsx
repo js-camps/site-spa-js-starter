@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 import { FormButton, FormInput } from "../ReusableComponents";
 
-// import { submitLogin } from "../../api";
+import { submitLogin } from "../../api";
 
 const FormContainer = () => {
     const [userPassword, setUserPassword] = useState("");
@@ -13,14 +13,14 @@ const FormContainer = () => {
     const clickHandler = async (event) => {
         event.preventDefault();
         setIsSubmitting(true);
-        // try {
-        //     await submitLogin({
-        //         username: userEmail,
-        //         password: userPassword,
-        //     });
-        // } catch (error) {
-        //     console.error(error);
-        // }
+        try {
+            await submitLogin({
+                username: userEmail,
+                password: userPassword,
+            });
+        } catch (error) {
+            console.error(error);
+        }
         setIsSubmitting(false);
     };
 
