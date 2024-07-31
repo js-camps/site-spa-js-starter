@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from "react";
 
-import { FormButton, FormInput } from "../ReusableComponents";
+import { FormButton, FormInput } from "../common";
 
 import { submitLogin } from "../../api";
 

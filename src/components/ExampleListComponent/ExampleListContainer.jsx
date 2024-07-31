@@ -3,7 +3,7 @@ import React from 'react';
 
 import { getExampleData } from "../../api";
 
-import { List } from '../ReusableComponents';
+import { List } from '../common';
 import RenderExampleList from './RenderExampleList';
 
 const ExampleList = () => {
