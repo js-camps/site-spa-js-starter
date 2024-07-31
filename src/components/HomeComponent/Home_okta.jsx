@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from "react";
 import { useOktaAuth } from "@okta/okta-react";
 
@@ -11,9 +10,11 @@ function Home() {
     useEffect(() => {
         if (!authState.isAuthenticated) {
             // When user isn't authenticated, forget any user info
+            // Our router will redirect back to login anyway.
             setUserInfo(null);
         } else {
             authService.getUser().then((info) => {
+                // if user is authenticated we can use the authService to snag some user info.
                 setUserInfo(info);
             });
         }
@@ -25,7 +26,9 @@ function Home() {
             {authState.isAuthenticated && !userInfo && (
                 <div>Loading user information...</div>
             )}
-            {authState.isAuthenticated && userInfo && <HomePage />}
+            {authState.isAuthenticated && userInfo && (
+                <HomePage userInfo={userInfo} />
+            )}
         </>
     );
     // Authstate is the prop we want to use to check if users are authenticated.
