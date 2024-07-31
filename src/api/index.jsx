@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "axios";
 
 // we will define a bunch of API calls here.
 
@@ -12,7 +12,7 @@ const getExampleData = () => {
         .then(response => response.data);
 }
 
-const submitLogin = async (user) => {
+const submitLogin = async () => {
     // Fake API call to simulate login
     await sleep(1000);
     return { data: { token: "fake-token" } };
