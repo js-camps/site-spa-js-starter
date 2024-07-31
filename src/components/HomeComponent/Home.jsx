@@ -1,18 +1,30 @@
-// eslint-disable-next-line no-unused-vars
-import React from "react";
-// import { useOktaAuth } from "@okta/okta-react";
+import React, { useState, useEffect } from "react";
+import PropTypes from 'prop-types';
 
 import { HomePage } from "../pages";
 
-function Home() {
-    // const { authState } = useOktaAuth();
-    // const { isAuthenticated, isPending } = authState;
+function Home({ LoadingComponent }) {
+    const [userInfo, setUserInfo] = useState(null);
 
-    // Authstate is the prop we want to use to check if users are authenticated.
-    // We can perform these checks on the front end, but ought to make sure we perform them on the backend.
-    let isPending = false
-    return isPending ? <div>... loading home page</div> : <HomePage />;
+    useEffect(() => {
+        const fetchUserInfo = () => {
+            setTimeout(() => {
+                let info = { name: "Richard" };
+                setUserInfo(info);
+            }, 1000); // Simulate a delay
+        };
+
+        fetchUserInfo();
+    }, []);
+
+    return (!userInfo || !userInfo.name)
+        ? <LoadingComponent message="... Fetching user profile" />
+        : <HomePage userInfo={userInfo} />;
 }
 
-export default Home;
+// Define PropTypes
+Home.propTypes = {
+    LoadingComponent: PropTypes.elementType.isRequired,
+};
 
+export default Home;

@@ -1,17 +1,36 @@
-// eslint-disable-next-line no-unused-vars
-import React from 'react';
+import React from "react";
+import { render, act, cleanup, screen, waitFor } from "@testing-library/react";
+import { describe, it, expect, afterEach, vi } from "vitest";
+import Home from "../components/HomeComponent/Home";
+import PropTypes from 'prop-types';
 
-import { describe, it, expect } from 'vitest';
-import { render } from '@testing-library/react';
+const LoadingComponent = ({ message }) => <div>{message}</div>;
 
-// Assuming the Home component is located at './Home'
-import Home from "../components/HomeComponent";
+LoadingComponent.propTypes = {
+    message: PropTypes.string.isRequired
+};
 
-describe('Home Component', () => {
-    it("[1] renders welcome message", () => {
-        // let's just make sure the component mounts with an H1, you'll want to update this test to include any UI on your landing page you'd like
-        const { getByText } = render(<Home />);
-        const h1 = getByText(/welcome to labs basic spa/i);
-        expect(h1.textContent).toBe("Welcome to Labs Basic SPA");
+afterEach(() => {
+    cleanup();
+    vi.resetAllMocks();
+});
+
+describe("<Home /> test suite", () => {
+    it("[1] authenticated and userProfile not null", async () => {
+        await act(async () => {
+            render(<Home LoadingComponent={LoadingComponent} />);
+        });
+
+        const welcomeText = await waitFor(() =>
+                screen.findByText(/hi richard, you are more than welcome!/i),
+            { timeout: 1500 }
+        );
+        expect(welcomeText).toBeInTheDocument();
+    });
+
+    it("[2] renders loading component based on initial null userInfo state", () => {
+        render(<Home LoadingComponent={LoadingComponent} />);
+        const loading = screen.getByText(/... fetching user profile/i);
+        expect(loading.textContent).toBe("... Fetching user profile");
     });
 });

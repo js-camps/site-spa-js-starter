@@ -1,7 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { BrowserRouter as Router, Route, useHistory } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
+import { LoadingComponent } from "./components/common";
 import ExampleList from "./components/ExampleListComponent"
 import Login from "./components/LoginComponent";
 import Home from "./components/HomeComponent";
@@ -14,7 +15,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <React.StrictMode>
           {/*<Security {...config}>*/}
               <Route path="/" exact>
-                  <Home />
+                  <Home LoadingComponent={LoadingComponent} />
               </Route>
               <Route path="/login">
                   <Login />
