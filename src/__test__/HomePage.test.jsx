@@ -7,7 +7,7 @@ import { describe, expect, it } from 'vitest';
 import HomePage from '../components/pages/HomePage.jsx'; // Ensure this path is correct
 
 describe('HomePage', () => {
-    it('renders welcome message with user name', () => {
+    it('[1] renders welcome message with user name', () => {
         const userInfo = { name: 'John' };
         const { getByText } = render(<HomePage userInfo={userInfo} />);
 

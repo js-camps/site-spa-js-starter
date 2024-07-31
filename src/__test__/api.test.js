@@ -8,13 +8,13 @@ afterEach(() => {
 });
 
 describe("API tests", () => {
-    it("sleep", async () => {
+    it("[1] sleep", async () => {
         await mockSleep(1000);
         expect(mockSleep).toHaveBeenCalledTimes(1);
         expect(mockSleep).toHaveBeenCalledWith(1000);
     });
 
-    it("submitLogin", async () => {
+    it("[2] submitLogin", async () => {
         const fakeUser = {
             username: "yellowSally@flytie.com",
             password: "testing123",

@@ -15,7 +15,7 @@ vi.mock("../api", () => ({
 }));
 
 describe("<ExampleListContainer /> test suite", () => {
-    it("[1]container renders without crashing", async () => {
+    it("[1] container renders without crashing", async () => {
         await act(async () => {
             await render(<ExampleListContainer />);
         });
