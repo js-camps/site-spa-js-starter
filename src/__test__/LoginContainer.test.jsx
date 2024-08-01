@@ -5,7 +5,7 @@ import userEvent from "@testing-library/user-event";
 import { submitLogin as mockSubmitLogin } from "../api";
 import { describe, it, vi, expect, afterEach } from 'vitest';
 
-import LoginContainer from "../components/LoginComponent";
+import LoginContainer from "../components/pages/Login/LoginContainer.jsx";
 
 vi.mock("../api");
 
