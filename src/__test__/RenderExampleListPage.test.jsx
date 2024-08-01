@@ -3,7 +3,7 @@ import React from "react";
 import { render, cleanup } from "@testing-library/react";
 import { afterEach, describe, it, vi, expect } from "vitest";
 
-import RenderExampleList from '../components/ExampleListComponent/RenderExampleList';
+import RenderExampleList from '../components/pages/ExampleList/RenderExampleListPage.jsx';
 
 afterEach(() => {
     cleanup();

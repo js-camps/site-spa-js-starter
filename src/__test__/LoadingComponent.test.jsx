@@ -6,7 +6,7 @@ import { describe, it, expect } from 'vitest';  // Import from vitest
 import { LoadingComponent } from "../components/common";
 
 describe("Loading Common Component", () => {
-    it("should mount a div based on props", () => {
+    it("[1] should mount a div based on props", () => {
         const { getByText, rerender } = render(
             <LoadingComponent message="Loading Content" />
         );
