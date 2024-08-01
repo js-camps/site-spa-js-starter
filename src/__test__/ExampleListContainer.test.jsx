@@ -1,23 +1,23 @@
 // eslint-disable-next-line no-unused-vars
-import React from "react";
-import { render, act, cleanup } from "@testing-library/react";
-import { afterEach, describe, it, vi } from "vitest";
+import React from 'react';
+import { render, act, cleanup } from '@testing-library/react';
+import { afterEach, describe, it, vi } from 'vitest';
 
-import ExampleListContainer from "../components/pages/ExampleList/ExampleListContainer.jsx";
+import ExampleListContainer from '../components/pages/ExampleList/ExampleListContainer.jsx';
 
 afterEach(() => {
-    cleanup();
-    vi.clearAllMocks();
+  cleanup();
+  vi.clearAllMocks();
 });
 
-vi.mock("../api", () => ({
-    getExampleData: vi.fn(() => Promise.resolve([]))
+vi.mock('../api', () => ({
+  getExampleData: vi.fn(() => Promise.resolve([])),
 }));
 
-describe("<ExampleListContainer /> test suite", () => {
-    it("[1] container renders without crashing", async () => {
-        await act(async () => {
-            await render(<ExampleListContainer />);
-        });
+describe('<ExampleListContainer /> test suite', () => {
+  it('[1] container renders without crashing', async () => {
+    await act(async () => {
+      await render(<ExampleListContainer />);
     });
+  });
 });

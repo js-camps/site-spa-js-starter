@@ -6,7 +6,7 @@ console.log('Matchers:', matchers);
 
 // Ensure the matchers are correctly imported and used
 if (Object.keys(matchers).length > 0) {
-    expect.extend(matchers);
+  expect.extend(matchers);
 } else {
-    console.error('Matchers object is undefined or null');
+  console.error('Matchers object is undefined or null');
 }

@@ -1,9 +1,10 @@
-import React from "react";
+// eslint-disable-next-line no-unused-vars
+import React from 'react';
 
-import { getExampleData } from "../../../api";
+import { getExampleData } from '../../../api';
 
-import { List } from "../../common";
-import RenderExampleListPage from "./RenderExampleListPage";
+import { List } from '../../common';
+import RenderExampleListPage from './RenderExampleListPage';
 
 // Here is an example of using our reusable List component to display some list data to the UI.
 const ExampleList = () => {
