@@ -7,10 +7,8 @@ import {
 
 import { LoginPage } from './components/pages/Login';
 import { HomePage } from './components/pages/Home';
+import { ExampleListPage } from "./components/pages/ExampleList";
 import { LoadingComponent } from "./components/common";
-
-
-import ExampleList from "./components/ExampleListComponent"
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -22,9 +20,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
               exact
               component={() => <HomePage LoadingComponent={LoadingComponent} />}
           />
-          <Route path="/items">
-              <ExampleList />
-          </Route>
+          <Route path="/example-list" component={ExampleListPage} />
       </React.StrictMode>
     </Router>,
 )
