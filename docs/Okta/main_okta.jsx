@@ -3,11 +3,11 @@ import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Route, useHistory } from "react-router-dom";
 import { Security, LoginCallback, SecureRoute } from "@okta/okta-react";
 
-import ExampleList from "./components/ExampleListComponent";
-import Login from "./components/LoginComponent";
-import Home from "./components/HomeComponent";
-import { config } from "./utils/oktaConfig";
-import { LoadingComponent } from "./components/common";
+import ExampleList from "../../src/components/ExampleListComponent/index.jsx";
+import Login from "../../src/components/LoginComponent/index.jsx";
+import Home from "../../src/components/HomeComponent/index.jsx";
+import { config } from "../../src/utils/oktaConfig.js";
+import { LoadingComponent } from "../../src/components/common/index.jsx";
 
 ReactDOM.render(
     <Router>
