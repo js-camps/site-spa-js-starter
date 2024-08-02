@@ -1,4 +1,4 @@
-# How to Bookmarking volumes in Docker
+# The bookmarking volumes in Docker
 
 The bookmarking volumes in Docker refers to mounting volumes, which allows you to persist data or share data between your host system and the Docker container. This is particularly useful for development environments where you want changes made on the host to be reflected in the container in real-time.
 
@@ -63,17 +63,17 @@ CMD ["sh", "-c", "npm run dev -- --host"]
 
 **Steps to Build and Run**:
 
-1.  Build the Docker Image:
+1. Build the Docker Image:
 
-```sh
-docker build -f Dockerfile.dev -t vita-react-display .
-```
+    ```sh
+    docker build -f Dockerfile.dev -t vita-react-display .
+    ```
 
-2.  Run the Docker Container with Volume Mounting and Correct Port Mapping:
+2. Run the Docker Container with Volume Mounting and Correct Port Mapping:
 
-```sh
-docker run -p 5173:5173 -v $(pwd):/app -v /app/node_modules vita-react-display
-```
+    ```sh
+    docker run -p 5173:5173 -v $(pwd):/app -v /app/node_modules vita-react-display
+    ```
 
 ## Approach 2: Use Docker Compose
 
@@ -102,30 +102,25 @@ services:
 
 1.  Build the Docker Image Using Docker Compose:
 
-```sh
-docker-compose build
-```
+    ```sh
+    docker-compose build
+    ```
 
 2.  Run the Docker Container Using Docker Compose:
 
-```sh
-docker-compose up
-```
+    ```sh
+    docker-compose up
+    ```
 
 3. Stop and Remove Services with Docker Compose Down:
 
-If your Docker Compose setup is currently running, you should see output in your terminal from the running services.
-
-Open a new terminal window or use the existing one and navigate to the directory containing your `docker-compose.yml` file. Then, run the following command:
-
-```sh
-docker-compose down
-```
+    ```sh
+    docker-compose down
+    ```
 
 **Note**: Ensure `package.json` `dev` script allows passing additional options:
-
-```json
-"scripts": {
-    "dev": "vite --host",
-  },
-```
+    ```
+    "scripts": {
+        "dev": "vite --host",
+      },
+    ```

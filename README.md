@@ -40,3 +40,24 @@
   [React Testing Library](https://github.com/testing-library/react-testing-library)
   [Jest](https://jestjs.io/)
 - For examples on how to test your application and more information please see [the following documentation](./src/__tests__/README.md).
+
+## Steps to Use Docker Compose
+
+1. Build the Docker Image Using Docker Compose:
+  ```sh
+  docker-compose build
+  ```
+
+2. Run the Docker Container Using Docker Compose:
+  ```sh
+  docker-compose up
+  ```
+
+3. Stop and Remove Services with Docker Compose Down:
+  ```sh
+  docker-compose down
+  ```
+
+4. Application works on localhost:5173
+
+    Local:   [http://localhost:5173](http://localhost:5173)

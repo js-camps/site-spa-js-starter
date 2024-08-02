@@ -40,5 +40,5 @@ USER appuser
 # Expose the port the app runs on
 EXPOSE 5173
 
-# Define the command to run the application with host option
-CMD ["sh", "-c", "npm run dev -- --host"]
+# Define the command to run the application
+CMD ["sh", "-c", "npm run dev"]
