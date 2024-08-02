@@ -1,5 +1,3 @@
-import process from '../../.eslintrc.cjs';
-
 const config = {
   issuer: process.env.REACT_APP_OKTA_ISSUER_URI,
   redirectUri: window.location.origin + '/implicit/callback',
