@@ -1,6 +1,8 @@
 import axios from 'axios';
+// import process from '../../.eslintrc.cjs';
 
-// we will define a bunch of API calls here.
+// Define the API URL directly here.
+const apiUrl = `https://example.com/api/profiles`;
 
 const sleep = (time) =>
   new Promise((resolve) => {
@@ -13,10 +15,28 @@ const getExampleData = () => {
     .then((response) => response.data);
 };
 
-const submitLogin = async () => {
-  // Fake API call to simulate login
-  await sleep(1000);
-  return { data: { token: 'fake-token' } };
+const getAuthHeader = (authState) => {
+  if (!authState.isAuthenticated) {
+    throw new Error('Not authenticated');
+  }
+  return { Authorization: `Bearer ${authState.accessToken}` };
 };
 
-export { sleep, getExampleData, submitLogin };
+const apiAuthGet = (authHeader) => {
+  return axios.get(apiUrl, { headers: authHeader });
+};
+
+const getProfileData = (authState) => {
+  try {
+    return apiAuthGet(getAuthHeader(authState)).then(
+      (response) => response.data,
+    );
+  } catch (error) {
+    return new Promise(() => {
+      console.log(error);
+      return [];
+    });
+  }
+};
+
+export { sleep, getExampleData, getProfileData };

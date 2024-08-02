@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 import { FormButton, FormInput } from '../../common';
-import { submitLogin } from '../../../api';
+// import { submitLogin } from '../../../api';
 
 const LoginContainer = () => {
   const [userPassword, setUserPassword] = useState('');
@@ -11,15 +11,15 @@ const LoginContainer = () => {
   const clickHandler = async (event) => {
     event.preventDefault();
     setIsSubmitting(true);
-    try {
-      await submitLogin({
-        username: userEmail,
-        password: userPassword,
-      });
-    } catch (error) {
-      console.error(error);
-    }
-    setIsSubmitting(false);
+    // try {
+    //   await submitLogin({
+    //     username: userEmail,
+    //     password: userPassword,
+    //   });
+    // } catch (error) {
+    //   console.error(error);
+    // }
+    // setIsSubmitting(false);
   };
 
   const inputHandler = (input) => {
