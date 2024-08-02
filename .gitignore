@@ -16,10 +16,12 @@ lerna-debug.log*
 # production
 /build
 
-node_modules
-dist
-dist-ssr
-*.local
+/node_modules
+/.parcel-cache
+/dist
+/.pnp
+/.npm
+.pnp.js
 
 # Editor directories and files
 .vscode/*
