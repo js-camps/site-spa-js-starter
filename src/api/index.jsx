@@ -1,8 +1,8 @@
 import axios from 'axios';
-// import process from '../../.eslintrc.cjs';
 
-// Define the API URL directly here.
-const apiUrl = `https://example.com/api/profiles`;
+// Define the API URLs using the environment variables
+const apiUrl = `${import.meta.env.VITE_API_URI}/profiles`;
+const exampleUrl = import.meta.env.VITE_EXAMPLE_URL;
 
 const sleep = (time) =>
   new Promise((resolve) => {
@@ -10,9 +10,7 @@ const sleep = (time) =>
   });
 
 const getExampleData = () => {
-  return axios
-    .get(`https://jsonplaceholder.typicode.com/photos?albumId=1`)
-    .then((response) => response.data);
+  return axios.get(exampleUrl).then((response) => response.data);
 };
 
 const getAuthHeader = (authState) => {
