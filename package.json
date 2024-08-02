@@ -51,8 +51,7 @@
       "git add"
     ],
     "src/**/*.{css,scss}": [
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ]
   }
 }
