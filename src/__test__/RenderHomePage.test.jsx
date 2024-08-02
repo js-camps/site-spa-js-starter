@@ -1,7 +1,9 @@
+// RenderHomePage.test.jsx
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
 import { render, act, cleanup, screen, waitFor } from '@testing-library/react';
 import { describe, it, expect, afterEach, vi } from 'vitest';
+import { MemoryRouter } from 'react-router-dom'; // Import MemoryRouter
 import { HomePage } from '../components/pages/Home';
 import RenderHomePage from '../components/pages/Home/RenderHomePage.jsx';
 import PropTypes from 'prop-types';
@@ -20,7 +22,11 @@ afterEach(() => {
 describe('<HomePage /> test suite', () => {
   it('[1] authenticated and userProfile not null', async () => {
     await act(async () => {
-      render(<HomePage LoadingComponent={LoadingComponent} />);
+      render(
+        <MemoryRouter>
+          <HomePage LoadingComponent={LoadingComponent} />
+        </MemoryRouter>
+      );
     });
 
     const welcomeText = await waitFor(
@@ -31,14 +37,22 @@ describe('<HomePage /> test suite', () => {
   });
 
   it('[2] renders loading component based on initial null userInfo state', () => {
-    render(<HomePage LoadingComponent={LoadingComponent} />);
+    render(
+      <MemoryRouter>
+        <HomePage LoadingComponent={LoadingComponent} />
+      </MemoryRouter>
+    );
     const loading = screen.getByText(/... fetching user profile/i);
     expect(loading.textContent).toBe('... Fetching user profile');
   });
 
   it('[3] renders welcome message with user name', () => {
     const userInfo = { name: 'John' };
-    const { getByText } = render(<RenderHomePage userInfo={userInfo} />);
+    const { getByText } = render(
+      <MemoryRouter>
+        <RenderHomePage userInfo={userInfo} />
+      </MemoryRouter>
+    );
 
     const h1 = getByText(/welcome to labs basic spa/i);
     expect(h1.textContent).toBe('Welcome to Labs Basic SPA');
