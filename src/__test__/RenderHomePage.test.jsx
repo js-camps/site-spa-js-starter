@@ -1,7 +1,7 @@
 // RenderHomePage.test.jsx
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
-import { render, cleanup, screen} from '@testing-library/react';
+import { render, cleanup, screen } from '@testing-library/react';
 import { describe, it, expect, afterEach, vi } from 'vitest';
 import { MemoryRouter } from 'react-router-dom'; // Import MemoryRouter
 import { HomePage } from '../components/pages/Home';
@@ -20,12 +20,11 @@ afterEach(() => {
 });
 
 describe('<HomePage /> test suite', () => {
-
   it('[1] renders loading component based on initial null userInfo state', () => {
     render(
       <MemoryRouter>
         <HomePage LoadingComponent={LoadingComponent} />
-      </MemoryRouter>
+      </MemoryRouter>,
     );
     const loading = screen.getByText(/... fetching user profile/i);
     expect(loading.textContent).toBe('... Fetching user profile');
@@ -36,7 +35,7 @@ describe('<HomePage /> test suite', () => {
     const { getByText } = render(
       <MemoryRouter>
         <RenderHomePage userInfo={userInfo} />
-      </MemoryRouter>
+      </MemoryRouter>,
     );
 
     const h1 = getByText(/welcome to labs basic spa/i);
