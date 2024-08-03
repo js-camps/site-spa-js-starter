@@ -1,7 +1,8 @@
 import axios from 'axios';
 
 // Define the API URLs using the environment variables
-const apiUrl = `${import.meta.env.VITE_API_URI}/profiles`;
+// const apiUrl = `${import.meta.env.VITE_API_URI}/profiles`;
+const apiUrl = import.meta.env.VITE_EXAMPLE_URL;
 const exampleUrl = import.meta.env.VITE_EXAMPLE_URL;
 
 const sleep = (time) =>

@@ -9,6 +9,7 @@ import {
 
 import { NotFoundPage } from './components/pages/NotFound';
 import { ExampleListPage } from './components/pages/ExampleList';
+import { ProfileListPage } from "./components/pages/ProfileList";
 import { LoginPage } from './components/pages/Login';
 import { HomePage } from './components/pages/Home';
 import { LoadingComponent } from './components/common';
@@ -43,6 +44,7 @@ function App() {
         component={() => <HomePage LoadingComponent={LoadingComponent} />}
       />
       <Route path="/example-list" component={ExampleListPage} />
+      <Route path="/profile-list" component={ProfileListPage} />
       <Route component={NotFoundPage} />
     </Switch>
   );

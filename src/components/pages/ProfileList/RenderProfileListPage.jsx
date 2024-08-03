@@ -8,11 +8,20 @@ const RenderProfileListPage = (props) => (
     <p>
       <Link to="/">Home</Link>
     </p>
+    {/*{props.data.map((item) => (*/}
+    {/*  <figure key={item.id}>*/}
+    {/*    <img src={item.avatar} alt={item.name} />*/}
+    {/*    <figcaption>*/}
+    {/*      <h3>{item.name}</h3>*/}
+    {/*    </figcaption>*/}
+    {/*  </figure>*/}
+    {/*))}*/}
+    {/* hard code from RenderExampleListPage*/}
     {props.data.map((item) => (
       <figure key={item.id}>
-        <img src={item.avatar} alt={item.name} />
+        <img src={item.thumbnailUrl} alt={item.title} />
         <figcaption>
-          <h3>{item.name}</h3>
+          <h3>{item.title}</h3>
         </figcaption>
       </figure>
     ))}
