@@ -48,7 +48,9 @@
 
 
 
-## Steps to Use Docker Compose
+## 
+
+### A. Steps to Use Docker Compose
 
 1. Build the Docker Image Using Docker Compose:
   ```sh
@@ -68,3 +70,12 @@
 4. Application works on localhost:5173
 
     Local:   [http://localhost:5173](http://localhost:5173)
+
+
+### B. Access Your Deployed Storybook
+
+After deployment, you can access your Storybook instance via the GitHub Pages URL, which is typically:
+
+```
+https://<your-github-username>.github.io/<your-repo-name>/
+```
