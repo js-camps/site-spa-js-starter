@@ -1,6 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Button } from "../../common";
 
 function RenderHomePage(props) {
   const {
@@ -22,17 +23,15 @@ function RenderHomePage(props) {
           <Link to="/profile-list">Profiles</Link>
         </p>
         <p>
-          <button
-            onClick={() => {
-              // authService.logout();
-            }}
-          >
-            Logout
-          </button>
+          <Button
+            buttonText="Logout"
+            // handleClick={() => authService.logout()}
+          />
         </p>
       </div>
     </div>
   );
 }
 export default RenderHomePage;
+
 

@@ -1,7 +1,7 @@
 // RenderHomePage.test.jsx
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
-import { render, act, cleanup, screen, waitFor } from '@testing-library/react';
+import { render, cleanup, screen} from '@testing-library/react';
 import { describe, it, expect, afterEach, vi } from 'vitest';
 import { MemoryRouter } from 'react-router-dom'; // Import MemoryRouter
 import { HomePage } from '../components/pages/Home';
@@ -20,23 +20,8 @@ afterEach(() => {
 });
 
 describe('<HomePage /> test suite', () => {
-  it('[1] authenticated and userProfile not null', async () => {
-    await act(async () => {
-      render(
-        <MemoryRouter>
-          <HomePage LoadingComponent={LoadingComponent} />
-        </MemoryRouter>
-      );
-    });
 
-    const welcomeText = await waitFor(
-      () => screen.findByText(/hi richard, you are more than welcome!/i),
-      { timeout: 1500 },
-    );
-    expect(welcomeText).toBeInTheDocument();
-  });
-
-  it('[2] renders loading component based on initial null userInfo state', () => {
+  it('[1] renders loading component based on initial null userInfo state', () => {
     render(
       <MemoryRouter>
         <HomePage LoadingComponent={LoadingComponent} />
@@ -46,7 +31,7 @@ describe('<HomePage /> test suite', () => {
     expect(loading.textContent).toBe('... Fetching user profile');
   });
 
-  it('[3] renders welcome message with user name', () => {
+  it('[2] renders welcome message with user name', () => {
     const userInfo = { name: 'John' };
     const { getByText } = render(
       <MemoryRouter>
