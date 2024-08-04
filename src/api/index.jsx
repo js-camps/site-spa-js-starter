@@ -5,6 +5,16 @@ import axios from 'axios';
 const apiUrl = import.meta.env.VITE_EXAMPLE_URL;
 const exampleUrl = import.meta.env.VITE_EXAMPLE_URL;
 
+const getDSData = url => {
+  if (!url) {
+    throw new Error('No URL provided');
+  }
+  return axios
+    .get(url)
+    .then(res => JSON.parse(res.data))
+    .catch(err => console.log('ERROR', err));
+};
+
 const sleep = (time) =>
   new Promise((resolve) => {
     setTimeout(resolve, time);
@@ -38,4 +48,4 @@ const getProfileData = (authState) => {
   }
 };
 
-export { sleep, getExampleData, getProfileData };
+export { sleep, getExampleData, getProfileData, getDSData };

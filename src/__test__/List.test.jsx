@@ -2,7 +2,9 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
 import { describe, it, vi, expect, afterEach } from 'vitest';
-import { act } from 'react-dom/test-utils';
+import { act } from 'react';
+
+// Import the List component
 import List from '../components/common/List.jsx';
 
 afterEach(() => {
@@ -20,7 +22,7 @@ describe('<List /> test suite', () => {
   it("[1] renders 'loading' component initially", async () => {
     let rendered;
 
-    act(() => {
+    await act(async () => {
       rendered = render(
         <List
           getItemsData={vi.fn(() => new Promise(() => {}))}

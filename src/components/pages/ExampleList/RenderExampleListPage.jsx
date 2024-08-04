@@ -1,9 +1,13 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const RenderExampleListPage = (props) => (
   <div>
+    <p>
+      <Link to="/">Home</Link>
+    </p>
     {props.data.map((item) => (
       <figure key={item.id}>
         <img src={item.thumbnailUrl} alt={item.title} />

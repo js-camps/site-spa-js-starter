@@ -18,12 +18,10 @@
   "dependencies": {
     "@okta/okta-react": "^6.9.0",
     "axios": "^1.7.2",
-    "git-up": "^7.0.0",
-    "git-url-parse": "^14.1.0",
-    "parse-url": "^9.2.0",
-    "prop-types": "^15.8.1",
+    "plotly.js": "^2.34.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-plotly.js": "^2.6.0",
     "react-router-dom": "^5.3.4"
   },
   "devDependencies": {
@@ -50,10 +48,15 @@
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.7",
     "eslint-plugin-storybook": "^0.8.0",
+    "git-up": "^7.0.0",
+    "git-url-parse": "^14.1.0",
     "husky": "^8.0.0",
     "jsdom": "^24.1.1",
     "lint-staged": "^15.2.7",
+    "parse-url": "^9.2.0",
     "prettier": "^3.3.3",
+    "prop-types": "^15.8.1",
+    "punycode": "^2.3.1",
     "storybook": "^8.2.7",
     "vite": "^5.3.4",
     "vitest": "^2.0.4"

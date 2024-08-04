@@ -12,6 +12,7 @@ import { ExampleListPage } from './components/pages/ExampleList';
 import { ProfileListPage } from './components/pages/ProfileList';
 import { LoginPage } from './components/pages/Login';
 import { HomePage } from './components/pages/Home';
+import { ExampleDataViz } from './components/pages/ExampleDataViz';
 import { LoadingComponent } from './components/common';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -45,6 +46,7 @@ function App() {
       />
       <Route path="/example-list" component={ExampleListPage} />
       <Route path="/profile-list" component={ProfileListPage} />
+      <Route path="/datavis" component={ExampleDataViz} />
       <Route component={NotFoundPage} />
     </Switch>
   );

@@ -23,6 +23,12 @@ function RenderHomePage(props) {
           <Link to="/profile-list">Profiles</Link>
         </p>
         <p>
+          <Link to="/example-list">Examplelist</Link>
+        </p>
+        <p>
+          <Link to="/datavis">Datavis</Link>
+        </p>
+        <p>
           <Button
             buttonText="Logout"
             // handleClick={() => authService.logout()}
