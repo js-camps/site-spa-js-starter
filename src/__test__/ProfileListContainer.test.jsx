@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, act } from '@testing-library/react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { describe, it, vi } from 'vitest';
 
@@ -26,12 +26,14 @@ vi.mock('@okta/okta-react', () => ({
 }));
 
 describe('<ProfileListContainer />', () => {
-  it('renders a list component', () => {
-    const { debug } = render(
-      <Router>
-        <ProfileListPage />
-      </Router>
-    );
-    debug();
+  it('renders a list component', async () => {
+    await act(async () => {
+      const { debug } = render(
+        <Router>
+          <ProfileListPage />
+        </Router>
+      );
+      debug();
+    });
   });
 });

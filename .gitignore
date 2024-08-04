@@ -11,7 +11,7 @@ lerna-debug.log*
 /coverage
 
 # env
-/.env
+#/.env
 
 # production
 /build

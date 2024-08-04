@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React from 'react';
 import { List, LoadingComponent } from '../components/common';
 
@@ -7,6 +8,7 @@ const handleFetchItems = () => Promise.resolve([]);
 
 const RenderExample = props => (
   <div>
+      {/* eslint-disable-next-line react/prop-types */}
     {props.data.map(item => (
       <figure key={item.id}>
         <img src={item.thumbnailUrl} alt={item.title} />

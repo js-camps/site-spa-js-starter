@@ -32,6 +32,7 @@ export const Page = () => {
         <ul>
           <li>
             Use a higher-level connected component. Storybook helps you compose such data from the
+            {/* eslint-disable-next-line react/no-unescaped-entities */}
             "args" of child component stories
           </li>
           <li>

@@ -16,7 +16,7 @@ function RenderHomePage(props) {
       <h3>Hi {userInfo.name}, you are more than welcome!</h3>
       <div>
         <p>
-          This is an example of a common example of how we'd like for you to
+          This is an example of a common example of how we&apos;d like for you to
           approach components.
         </p>
         <p>
