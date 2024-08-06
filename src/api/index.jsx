@@ -15,31 +15,33 @@ const getDSData = url => {
     .catch(err => console.log('ERROR', err));
 };
 
-const sleep = (time) =>
-  new Promise((resolve) => {
+const sleep = time =>
+  new Promise(resolve => {
     setTimeout(resolve, time);
   });
 
 const getExampleData = () => {
-  return axios.get(exampleUrl).then((response) => response.data);
+  return axios
+    .get(`https://jsonplaceholder.typicode.com/photos?albumId=1`)
+    .then(response => response.data);
 };
 
-const getAuthHeader = (authState) => {
+const getAuthHeader = authState => {
   if (!authState.isAuthenticated) {
     throw new Error('Not authenticated');
   }
-  return { Authorization: `Bearer ${authState.accessToken}` };
+  console.log('idTOKEN : ', authState.idToken);
+  console.log('ACCESSTOKEN: ', authState.accessToken);
+  return { Authorization: `Bearer ${authState.idToken}` };
 };
 
-const apiAuthGet = (authHeader) => {
+const apiAuthGet = authHeader => {
   return axios.get(apiUrl, { headers: authHeader });
 };
 
-const getProfileData = (authState) => {
+const getProfileData = authState => {
   try {
-    return apiAuthGet(getAuthHeader(authState)).then(
-      (response) => response.data,
-    );
+    return apiAuthGet(getAuthHeader(authState)).then(response => response.data);
   } catch (error) {
     return new Promise(() => {
       console.log(error);
