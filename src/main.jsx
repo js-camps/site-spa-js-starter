@@ -7,6 +7,8 @@ import {
   Switch,
 } from 'react-router-dom';
 
+import 'antd/dist/antd.css';
+
 import { NotFoundPage } from './components/pages/NotFound';
 import { ExampleListPage } from './components/pages/ExampleList';
 import { ProfileListPage } from './components/pages/ProfileList';

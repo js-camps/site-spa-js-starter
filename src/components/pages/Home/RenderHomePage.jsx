@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '../../common';
+// import { Button } from 'antd';
 
 function RenderHomePage(props) {
   const {
@@ -23,19 +24,22 @@ function RenderHomePage(props) {
           <Link to="/profile-list">Profiles</Link>
         </p>
         <p>
-          <Link to="/example-list">Examplelist</Link>
+          <Link to="/example-list"> Example list </Link>
         </p>
         <p>
           <Link to="/datavis">Datavis</Link>
         </p>
-        <p>
+
           <Button
-            buttonText="Logout"
+            buttonText="Logout (on common button)"
             // handleClick={() => authService.logout()}
           />
-        </p>
+
+        {/*<Button type="primary">Logout (on Ant button) </Button>*/}
+
       </div>
     </div>
   );
 }
+
 export default RenderHomePage;
