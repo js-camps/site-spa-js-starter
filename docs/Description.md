@@ -650,13 +650,14 @@ RenderExampleListPage.propTypes = {
 
 ExampleDataViz
 
-src/components/pages/ExampleDataViz/DataViz.jsx
+src/components/pages/ExampleDataViz/RenderDataViz.jsx
 ```jsx
 // eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from 'react';
 import Plot from 'react-plotly.js';
 import PropTypes from 'prop-types';
 import { getDSData } from '../../../api/Data.jsx';
+import { Link } from 'react-router-dom';
 
 const initialState = {
   data: [],
@@ -719,6 +720,9 @@ PlotComponent.propTypes = {
 
 const DataViz = ({ urls }) => (
   <>
+    <p>
+      <Link to="/">Home</Link>
+    </p>
     {urls.map((url, index) => (
       <PlotComponent key={index} url={url} />
     ))}
@@ -730,6 +734,7 @@ DataViz.propTypes = {
 };
 
 export default DataViz;
+
 ```
 
 src/components/pages/ExampleDataViz/DataVizContainer.jsx

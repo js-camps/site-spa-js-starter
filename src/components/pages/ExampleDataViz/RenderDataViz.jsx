@@ -15,7 +15,7 @@ const initialState = {
   },
 };
 
-const PlotComponent = ({ url }) => {
+const PlotComponent = ({ url, title }) => {
   const [plotData, setPlotData] = useState(initialState);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -42,7 +42,7 @@ const PlotComponent = ({ url }) => {
   }, [url]);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <div>Loading {title}...</div>;
   }
 
   if (error) {
@@ -53,7 +53,7 @@ const PlotComponent = ({ url }) => {
     <Plot
       className="DataViz"
       data={plotData.data}
-      layout={plotData.layout}
+      layout={{ ...plotData.layout, title }}
       frames={plotData.frames}
       config={plotData.config}
     />
@@ -62,21 +62,22 @@ const PlotComponent = ({ url }) => {
 
 PlotComponent.propTypes = {
   url: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
 };
 
-const DataViz = ({ urls }) => (
+const DataViz = ({ lineChartUrl, barChartUrl }) => (
   <>
     <p>
       <Link to="/">Home</Link>
     </p>
-    {urls.map((url, index) => (
-      <PlotComponent key={index} url={url} />
-    ))}
+    <PlotComponent url={lineChartUrl} title="Line Chart" />
+    <PlotComponent url={barChartUrl} title="Bar Chart" />
   </>
 );
 
 DataViz.propTypes = {
-  urls: PropTypes.arrayOf(PropTypes.string).isRequired,
+  lineChartUrl: PropTypes.string.isRequired,
+  barChartUrl: PropTypes.string.isRequired,
 };
 
 export default DataViz;
