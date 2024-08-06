@@ -19,11 +19,15 @@
     "@okta/okta-react": "^6.9.0",
     "antd": "^4.24.16",
     "axios": "^1.7.2",
+    "less": "^4.2.0",
+    "less-loader": "^12.2.0",
     "plotly.js": "^2.34.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-plotly.js": "^2.6.0",
-    "react-router-dom": "^5.3.4"
+    "react-router-dom": "^5.3.4",
+    "vite-plugin-style-import": "^2.0.0",
+    "vite-plugin-theme": "^0.8.6"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.6.1",
