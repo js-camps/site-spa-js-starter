@@ -36,7 +36,6 @@ const getAuthHeader = authState => {
 const apiAuthGet = authHeader => {
   return axios.get(apiUrl, { headers: authHeader });
 };
-
 const getProfileData = authState => {
   try {
     return apiAuthGet(getAuthHeader(authState)).then(response => response.data);
@@ -47,5 +46,4 @@ const getProfileData = authState => {
     });
   }
 };
-
 export { sleep, getExampleData, getProfileData, getDSData };
