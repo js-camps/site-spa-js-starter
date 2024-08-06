@@ -22,7 +22,7 @@ const sleep = time =>
 
 const getExampleData = () => {
   return axios
-    .get(`https://jsonplaceholder.typicode.com/photos?albumId=1`)
+    .get(exampleUrl)
     .then(response => response.data);
 };
 
@@ -30,8 +30,6 @@ const getAuthHeader = authState => {
   if (!authState.isAuthenticated) {
     throw new Error('Not authenticated');
   }
-  console.log('idTOKEN : ', authState.idToken);
-  console.log('ACCESSTOKEN: ', authState.accessToken);
   return { Authorization: `Bearer ${authState.idToken}` };
 };
 
