@@ -28,11 +28,12 @@ const DataVizContainer = () => {
           placeholder="Select Your State"
         >
           {states.map(state => (
-            <Option value={state.value} id={state.value}>
-              {state.value}
+            <Option key={state.value} value={state.value} id={state.value}>
+              {state.label}
             </Option>
           ))}
         </Select>
+
         <Divider orientation="left">Actions</Divider>
         <Button type="primary" style={{ marginRight: '10px' }}>
           Submit

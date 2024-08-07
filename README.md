@@ -1,8 +1,11 @@
 # Basic SPA
 
-> **Disclaimer:** This application is currently in Alpha (as of June 08, 2020) and is not ready for production. Please use at your own risk as things will change almost daily.
+[![Maintainability](https://api.codeclimate.com/v1/badges/5e37932c610a83213715/maintainability)](https://codeclimate.com/github/Lambda-School-Labs/labs-spa-starter/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/5e37932c610a83213715/test_coverage)](https://codeclimate.com/github/Lambda-School-Labs/labs-spa-starter/test_coverage)
+
 - Welcome to your `Basic Single Page Application Repository`. Use this to start your own Greenfield Project using ReactJS and common industry standards.
+
 - This repository assumes a handful of industry practices and standards. We strive to keep you on the bleeding edge of the industry and as a result, we have made some opinions for you so that you don't have to; you're welcome.
+
 - The following was built using [Create React App](https://reactjs.org/docs/create-a-new-react-app.html) for base boiler-plating. We will maintain the dependencies as according to their specifications as an Engineering Organization.
 
 ## StoryBook
@@ -13,21 +16,24 @@
 ## Requirements
 
 - [Labs Engineering Standard requirements found here](https://labs.lambdaschool.com/topics/node-js/)
-- 
+
 ## Getting Started
 
-### Enviornment variables
+### Environment variables
 
 - `REACT_APP_CLIENT_ID` Okta client id
 - `REACT_APP_OKTA_ISSUER_URI` Okta api authorization server issuer uri (eg. `https://name-438r8hr.okta.com/oauth2/default`)
+- `REACT_APP_API_URI` The URL (localhost or live) for the Backend that you're building
+
 - Fork and clone the repo to install it as your own remote.
     - **note** please [be sure to set your remote](https://help.github.jp/enterprise/2.11/user/articles/changing-a-remote-s-url/) for this repo to your to point to your Labs Team Front End Repository.
 - run: `npm install` to download all dependencies.
-- run: `npm dev` to start your local development server.
+- run: `npm start` to start your local development server.
 
 ## Deploying Your App
 
-- We recommend you deploy this project using [AWS amplify](https://aws.amazon.com/amplify/). You can find a step-by-step deployment guide [here](./DEPLOYMENT_GUIDE.md).
+- Your front end is to be deployed using [AWS amplify](https://aws.amazon.com/amplify/). You can find a step-by-step deployment guide [here](./DEPLOYMENT_GUIDE.md).
+- Your engineering manager will ensure that you have the credentials you need to get your app deployed.
 
 ## Components
 
@@ -39,7 +45,17 @@
 
 - In order to provide an experience for you to dive right into a code base and have everything you need to successfully style and craft your UI Components we'd like for you to gain some practice using the [`ANT Design Library`](https://ant.design/).
 
-- Instructions on how to use components.
+- Instructions on how to use components can be found in the `notes` portion in the [project storybook](https://lambda-school-labs.github.io/labs-spa-starter/?path=/info/form--example-form).
+
+- It is recommended that you use the [AntD components](https://ant.design/components/overview/) as your common components.
+
+### Theme-ing your app
+
+- Even though you're using Ant Design and the global stylesheet that comes with it, you can control the theme of your application by changing things like font-family, sizes, border-radius', primary/accent colors etc.
+
+- To do this, simply go to the `theme-overrides.js` file and use the[ following properties to override the styles](https://ant.design/docs/react/customize-theme)
+
+- **You will need to restart your app completely restart your dev server when making changes to this JS file**
 
 ## Data Visualization - Working with Hybrid Teams
 
