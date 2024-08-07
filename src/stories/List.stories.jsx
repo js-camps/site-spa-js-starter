@@ -9,10 +9,19 @@ import markdown from './story_descriptions/List.md';
 
 export default { title: 'List', parameters: { notes: markdown } };
 
-const handleFetchItems = () => Promise.resolve([]);
+const handleFetchItems = () =>
+  Promise.resolve([
+    {
+      id: 12321312312,
+      thumbnailUrl:
+        'https://tk-assets.lambdaschool.com/8a7d77c1-50ee-4350-9840-d2437bbfcaea_KaU4DC_DG.jpg',
+      title: 'I Doggo',
+    },
+  ]);
 
 const RenderExample = props => (
   <div>
+    {/* eslint-disable-next-line react/prop-types */}
     {props.data.map(item => (
       <figure key={item.id}>
         <img src={item.thumbnailUrl} alt={item.title} />
@@ -28,18 +37,7 @@ export const listExample = () => (
   <List
     getItemsData={handleFetchItems}
     LoadingComponent={() => <LoadingComponent message="...loading data" />}
-    RenderItems={() => (
-      <RenderExample
-        data={[
-          {
-            id: 12321312312,
-            thumbnailUrl:
-              'https://tk-assets.lambdaschool.com/8a7d77c1-50ee-4350-9840-d2437bbfcaea_KaU4DC_DG.jpg',
-            title: 'I Doggo',
-          },
-        ]}
-      />
-    )}
+    RenderItems={RenderExample}
   />
 );
 
