@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "license" : "MIT",
+  "license": "MIT",
   "repository": "github:Lambda-School-Labs/labs-spa-starter",
   "scripts": {
     "dev": "vite --host",
@@ -59,14 +59,17 @@
     "git-url-parse": "^14.1.0",
     "husky": "^8.0.0",
     "jsdom": "^24.1.1",
+    "kleur": "^4.1.5",
     "lint-staged": "^15.2.7",
     "parse-url": "^9.2.0",
     "prettier": "^3.3.3",
+    "prompts": "^2.4.2",
     "prop-types": "^15.8.1",
     "punycode": "^2.3.1",
     "storybook": "^8.2.7",
     "vite": "^5.3.4",
-    "vitest": "^2.0.4"
+    "vitest": "^2.0.4",
+    "yaml": "^2.5.0"
   },
   "husky": {
     "hooks": {
