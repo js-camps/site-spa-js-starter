@@ -5,15 +5,14 @@ import { List as AntList, Card } from 'antd';
 import Meta from 'antd/lib/card/Meta';
 
 import 'antd/dist/antd.css';
-import markdown from './story_descriptions/ListNotes.md';
+import markdown from './story_descriptions/List.md';
 
-export default { title: 'List Example', parameters: { notes: markdown } };
+export default { title: 'List', parameters: { notes: markdown } };
 
 const handleFetchItems = () => Promise.resolve([]);
 
 const RenderExample = props => (
   <div>
-    {/* eslint-disable-next-line react/prop-types */}
     {props.data.map(item => (
       <figure key={item.id}>
         <img src={item.thumbnailUrl} alt={item.title} />
