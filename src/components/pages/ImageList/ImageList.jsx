@@ -1,8 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
-const AccessKey = import.meta.env.REACT_APP_API_KEY;
+import { Link } from 'react-router-dom';
 
 const ImageList = () => {
   const [images, setImages] = useState([]);
@@ -12,7 +11,7 @@ const ImageList = () => {
       .get('https://api.unsplash.com/search/photos', {
         params: { query: 'rainbow trout' },
         headers: {
-          Authorization: `Client-ID ${AccessKey}`,
+          Authorization: `Client-ID ${import.meta.env.VITE_API_KEY}`,
         },
       })
       .then(res => {
@@ -27,6 +26,9 @@ const ImageList = () => {
     return images.map(image => {
       return (
         <div key={image.id}>
+          <p>
+            <Link to="/">Home</Link>
+          </p>
           <div>{image.description}</div>
           <img src={image.urls.thumb} alt={image.alt_description} />
         </div>
