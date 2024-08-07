@@ -3,6 +3,8 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "license" : "MIT",
+  "repository": "github:Lambda-School-Labs/labs-spa-starter",
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",
