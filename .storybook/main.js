@@ -1,6 +1,9 @@
 /** @type { import('@storybook/react-vite').StorybookConfig } */
 const config = {
-  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
+  stories: [
+    '../src/**/*.mdx',
+    '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'
+  ],
   addons: [
     '@storybook/addon-onboarding',
     '@storybook/addon-links',
@@ -15,5 +18,12 @@ const config = {
       builder: 'storybook-builder-vite',
     },
   },
+  viteFinal: (config, { configType }) => {
+    return {
+      ...config,
+      assetsInclude: ['**/*.md', ...config.assetsInclude ?? []],
+    };
+  },
 };
+
 export default config;
