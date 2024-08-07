@@ -33,10 +33,10 @@ function RenderHomePage(props) {
           <Link to="/datavis">Data Visualizations Example</Link>
         </p>
 
-        <Button
-          buttonText="Logout (on common button)"
-          // handleClick={() => authService.logout()}
-        />
+          <Button
+            // handleClick={() => authService.logout()}
+            buttonText="Logout (common button)"
+          />
 
         {/*<Button*/}
         {/*  type="primary"*/}
