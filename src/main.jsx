@@ -17,6 +17,7 @@ import { HomePage } from './components/pages/Home';
 import { LandingPage } from './components/pages/Landing';
 import { ExampleDataViz } from './components/pages/ExampleDataViz';
 import { LoadingComponent } from './components/common';
+import { ImageList } from './components/pages/ImageList';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Router>
@@ -42,6 +43,7 @@ function App() {
     <Switch>
       <Route path="/login" component={LoginPage} />
       <Route path="/landing" component={LandingPage} />
+      <Route path="/images" component={ImageList} />
       {/* any of the routes you need secured should be registered as SecureRoutes */}
       <Route
         path="/"
